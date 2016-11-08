@@ -25,7 +25,6 @@
         - { role: mysql, when: true }
         - { role: mongo, when: true }
         - { role: git, when: true }
-        - { role: curl, when: true }
         - { role: sqlite, when: true }
         - { role: rabbitmq, when: true }
         - { role: redis, when: true }
