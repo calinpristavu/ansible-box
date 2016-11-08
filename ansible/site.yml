@@ -9,9 +9,17 @@
     roles:
         - { role: init, when: true }
         - { role: nginx, when: true }
-        - { role: php5-fpm, when: true }
-        - { role: php5-cli, when: true }
-        - { role: php5-common, when: true }
+
+        # PHP5 packages
+        - { role: php5-fpm, when: false }
+        - { role: php5-cli, when: false }
+        - { role: php5-common, when: false }
+
+        # PHP7 packages
+        - { role: php7-common, when: true }
+        - { role: php7-fpm, when: true }
+        - { role: php7-cli, when: true }
+
         - { role: composer, when: true }
         - { role: phpunit, when: true }
         - { role: mysql, when: true }
