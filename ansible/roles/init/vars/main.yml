@@ -1,3 +1,2 @@
-php_ppa: php5
 sys_packages:
       - vim

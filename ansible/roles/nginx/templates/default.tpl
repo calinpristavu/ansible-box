@@ -1,11 +1,11 @@
 server {
     listen 80;
 
-    server_name symfony;
-    root        {{ doc_root }};
+    server_name {{ nginx.server_name }};
+    root        {{ nginx.doc_root }};
 
-    error_log   /var/log/nginx/symfony/error.log;
-    access_log  /var/log/nginx/symfony/access.log;
+    error_log   /var/log/nginx/{{ nginx.server_name }}/error.log;
+    access_log  /var/log/nginx/{{ nginx.server_name }}/access.log;
 
     rewrite     ^/(app|app_dev)\.php/?(.*)$ /$1 permanent;
 
