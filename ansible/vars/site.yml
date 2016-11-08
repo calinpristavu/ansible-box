@@ -1,3 +1,6 @@
 nginx:
     doc_root: /var/www/web
     server_name: ansible-box.dev
+
+db:
+    name: databaseName

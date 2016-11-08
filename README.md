@@ -1,7 +1,7 @@
 # ansible-box
 
 1. Requirements
-This package uses the latest versions of dependencies. PLEASE UPDATE!
+This package uses the latest versions of dependencies. **PLEASE UPDATE!**
     - Latest Vagrant version. Get it [from here](https://www.vagrantup.com/downloads.html).
     - Latest VirtualBox version. Get it [from here](https://www.virtualbox.org/wiki/Downloads).
     - The `vagrant-bindfs` plugin. Install it by using `vagrant plugin install vagrant-bindfs`
@@ -20,3 +20,7 @@ This package uses the latest versions of dependencies. PLEASE UPDATE!
     WARNING!! Before vagrant up, only enable the ones you need!
 
     Enabling and disabling packages is done in `ansible/site.yml`
+    Recommended: Change common variables in `vars/site.yml`
+    
+    If the standard, out-of-the-box configuration is not enough,
+    Use the `custom` role to extend the provisioning behaviour
