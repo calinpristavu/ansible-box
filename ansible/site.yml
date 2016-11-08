@@ -1,0 +1,26 @@
+---
+  - hosts: all
+    sudo: yes
+#    vars_files:
+#        - vars/config.yml
+    vars:
+        # GitHub OAuth token (used to help overcome API rate limits).
+        composer_github_oauth_token: ''
+    roles:
+        - { role: init, when: true }
+        - { role: nginx, when: true }
+        - { role: php5-fpm, when: true }
+        - { role: php5-cli, when: true }
+        - { role: php5-common, when: true }
+        - { role: composer, when: true }
+        - { role: phpunit, when: true }
+        - { role: mysql, when: true }
+        - { role: mongo, when: true }
+        - { role: git, when: true }
+        - { role: curl, when: true }
+        - { role: sqlite, when: true }
+        - { role: wget, when: true }
+        - { role: rabbitmq, when: true }
+        - { role: redis, when: true }
+        - { role: memcached, when: true }
+        - { role: nodejs, when: true }

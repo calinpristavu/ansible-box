@@ -1,0 +1,7 @@
+---
+- name:    Download PHPUnit
+  become:  false
+  get_url:
+    url: https://phar.phpunit.de/phpunit.phar
+    dest: /usr/local/bin/phpunit
+    mode: u+rwx
