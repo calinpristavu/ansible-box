@@ -30,6 +30,7 @@
         - { role: redis, when: true }
         - { role: memcached, when: true }
         - { role: nodejs, when: true }
+        - { role: blackfire, when: true }
 
         # The 'custom' role must always be the last role in the list
         # It serves as an extension point for the dev to add his own custom logic
