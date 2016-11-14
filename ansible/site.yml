@@ -8,7 +8,8 @@
         composer_github_oauth_token: ''
     roles:
         - { role: init, when: true }
-        - { role: nginx, when: true }
+#        - { role: nginx, when: true }
+        - { role: apache, when: true }
 
         # PHP5 packages
         - { role: php5-fpm, when: false }
@@ -19,7 +20,6 @@
         - { role: php7-common, when: true }
         - { role: php7-fpm, when: true }
         - { role: php7-cli, when: true }
-
         - { role: composer, when: true }
         - { role: phpunit, when: true }
         - { role: mysql, when: true }
