@@ -17,7 +17,7 @@ php_memory_limit: "1024M"
 php_max_execution_time: 60
 
 php_opcache_enable: 1
-php_opcache_revalidate_freq: 2592000
+php_opcache_revalidate_freq: 0
 php_opcache_opcache_validate_timestamps: 1
 php_opcache_max_accelerated_files: 20000
 php_opcache_memory_consumption: 192

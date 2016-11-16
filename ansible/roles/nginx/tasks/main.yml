@@ -1,4 +1,12 @@
 ---
+  - name: Add nginx repository for Ubuntu
+    become: true
+    apt_repository: repo={{ nginx.nginx_ppa }}
+
+  - name: Update apt
+    become: yes
+    apt: update_cache=yes
+
   - name: Install nginx
     sudo: yes
     apt:  pkg=nginx state=latest
@@ -9,5 +17,11 @@
 
   - name: Change default nginx site
     sudo: yes
-    template: src=default.tpl dest=/etc/nginx/sites-available/{{ nginx.server_name }}.conf
+    template: src={{php_version}}_vhost.tpl dest=/etc/nginx/sites-available/{{ nginx.server_name }}.conf
+    when: php_version == "php5" or php_version == "php7"
+
+  - name: Create symlink for {{ nginx.server_name }}
+    sudo: yes
+    file: src=/etc/nginx/sites-available/{{nginx.server_name}}.conf dest=/etc/nginx/sites-enabled/{{nginx.server_name}}.conf state=link
     notify: restart nginx
+    when: php_version == "php5" or php_version == "php7"
